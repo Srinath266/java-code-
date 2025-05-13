@@ -1,0 +1,32 @@
+import java.util.*;
+class Main{
+ public static void main(String[] args)
+ {
+     Scanner sc = new Scanner(System.in);
+     int size = sc.nextInt();
+     long[] arr = new long[size];
+     int frq = 1;
+     
+     for(int en = 0;en < size;en++)
+     {
+         if(arr[en] == -1L)
+             continue;
+         
+         for(int j = en + 1 ; j<size;j++){
+             arr[en] = sc.nextLong();
+             
+             if(arr[en] == arr[j]){
+                 frq += 1;
+                 arr[j] =- 1;
+             }
+             }
+             if(frq==1){
+             System.out.print(arr[en] + " ");
+             }
+             else{
+                 System.out.print("Not Unique Elem");
+             }
+         }
+}
+
+}
