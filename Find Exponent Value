@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class Main 
+{
+    static int BaseExpo(int base , int expo)
+    {
+        if(expo==1)
+        return base;
+        else if(expo == 0)
+        return 1;
+        else
+        return base*BaseExpo(base, expo-1);
+    }
+    
+    public static void main(String[] args)
+    {
+        Scanner ip=new Scanner(System.in);
+        System.out.print("Enter the base Number : ");
+        int base=ip.nextInt();
+        System.out.print("Enter the power Number : ");
+        int expo=ip.nextInt();
+        int res=BaseExpo(base , expo);
+        System.out.println("Base with power value = "+res);
+    }
+}
+OUTPUT :
+Enter the base Number : 4
+Enter the power Number : 2
+Base with power value = 16
