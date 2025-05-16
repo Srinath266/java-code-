@@ -1,0 +1,26 @@
+import java.util.*;
+class Main 
+{
+    static int SumofDigit(int n)
+    {
+        if(n>=0 && n<=9)
+        return n;
+        else
+        return (n%10) + SumofDigit(n/10);
+    }
+    
+    public static void main(String[] args)
+    {
+        Scanner ip=new Scanner(System.in);
+        System.out.print("Enter the base Number : ");
+        int n =ip.nextInt();
+        int res = SumofDigit(n);
+        System.out.println("Sum of Digit = "+ res);
+    }
+}
+
+
+OUTPUT:
+
+Enter the base Number : 345
+Sum of Digit = 12
