@@ -1,0 +1,20 @@
+import java.util.Scanner;
+class Main 
+{
+    static int sumOfFirstN(int n)
+    {
+        if(n==1)
+        return 1;
+        else
+        return n+sumOfFirstN(n-1);
+    }
+    
+    public static void main(String[] args)
+    {
+        Scanner ip=new Scanner(System.in);
+        System.out.print("Enter the Natural Number : ");
+        int n=ip.nextInt();
+        int res=sumOfFirstN(n);
+        System.out.println("Sum of the First Natural Numbers = "+res);
+    }
+}
