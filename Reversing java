@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+class Main
+{
+    static int rev = 0;
+    static int reverse ( int num)
+    {
+        if(num==0)
+        {
+            return rev;
+        }
+        else
+        {
+            rev=(rev*10)+(num%10);
+            return reverse(num/10);
+        }
+    }
+    
+    public static void main(String[] args)
+    {
+        Scanner ip=new Scanner (System.in);
+        int num=ip.nextInt();
+        int res=reverse(num);
+        System.out.print(res);
+    }
+}
