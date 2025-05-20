@@ -1,0 +1,36 @@
+import java.util.Scanner;
+class  Main 
+{
+    public static void main(String[] args)
+    {
+        Scanner ip = new Scanner(System.in);
+        System.out.print("enter no.of rows :");
+        int numR = ip.nextInt();   
+        System.out.print("enter no.of cols :");
+        int numC = ip.nextInt();
+        
+        int[][] MatrixArr = new int[numR][numC];
+        
+        for( int i = 0;i<numR; i++){
+            for(int j=0; j<numC; j++){
+                MatrixArr[i][j] = ip.nextInt();
+            }
+        }
+        System.out.println("Matrix is :");
+        
+        for(int i = 0; i<numR; i++ ){
+            for(int j = 0; j<numC; j++){
+                System.out.print(MatrixArr[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+OUTPUT:
+enter no.of rows :2
+enter no.of cols :2
+1 23 24 2
+Matrix is :
+1 23 
+24 2 
