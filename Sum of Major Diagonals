@@ -1,0 +1,59 @@
+import java.util.Scanner;
+class Main{
+    static void displayDiagonal(int[][] matrix, int n)
+    {
+        /*for(int row = 0; row<n; row++)
+        {
+            for(int col=0; col<n; col++)
+            {
+                if(row ==col)
+                System.out.print(matrix[row][col]+" ");
+            }
+        }*/
+        
+        for(int index = 0; index<n; index++){
+            System.out.println(matrix[index][index]+" ");
+        }
+    }    
+        
+        // optimised way
+    static int sumOfMajorDiagonal(int[][] matrix){
+        
+            int sum=0;
+            for(int ind=0; ind<matrix.length; ind++){
+               sum=sum+matrix[ind][ind];
+        }
+        return sum;
+        }
+        
+    public static void main(String[] args){
+            Scanner ip=new Scanner(System.in);
+            int n=ip.nextInt();
+            // int nCols=ip.nextInt();
+            int[][] matrix=new int [n][n];
+             for(int row=0; row<n; row++) {
+                for(int col=0; col<n; col++) {
+                    matrix[row][col]=ip.nextInt();
+                    
+                }
+            }
+            System.out.println("the major diagonal is:");
+            displayDiagonal(matrix, n);
+            int res=sumOfMajorDiagonal(matrix);
+            System.out.println("\nTHE major diagonal sum is:");
+            System.out.println(res);
+        }
+            
+    }
+
+Output:
+3
+10 20 30 40 68 23 45 23 22
+the major diagonal is:
+10 
+68 
+22 
+
+THE major diagonal sum is:
+100
+
