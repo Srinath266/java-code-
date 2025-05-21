@@ -1,0 +1,53 @@
+import java.util.*;
+public class Main {
+
+    static void displayDiagonal(int[][] matrix, int n){
+    // Bruteforce method :
+        // for(int row = 0; row<n; row++){
+        //     for(int col = 0; col<n; col++){
+        //         if(row+col == n-1){
+        //             System.out.println(matrix[row][col]+ " ");
+        //         }
+        //     }
+        // }
+
+        // optimal way
+
+        for(int ind=0; ind<n; ind++){
+            System.out.print(matrix[ind][n-ind-1]+" ");
+        }
+    }
+
+
+    static int sumOfMinorDiagonal(int[][] matrix){
+        int sum = 0;
+        int n =matrix.length;
+        for(int i = 0; i<matrix.length; i++){
+            sum += matrix[i][n-i-1];  
+        }
+        return sum;  
+    }
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int matrix[][] = new int[n][n];
+        for(int row = 0; row < n; row++){
+            for(int col=0; col<n; col++){
+              matrix[row][col] = sc.nextInt();
+            }
+        }
+        System.out.println("The minor diagonal is: ");
+        displayDiagonal(matrix, n);
+        int res = sumOfMinorDiagonal(matrix);
+        System.out.println("The sum of Diagonals is : ");
+        System.out.println(res);
+    }
+}
+
+OUTPUT:
+3
+11 22 33 44 55 66 77 88 99
+The minor diagonal is: 
+33 55 77 The sum of Diagonals is : 
+165
