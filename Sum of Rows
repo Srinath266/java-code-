@@ -1,0 +1,40 @@
+import java.util.*;
+public class Main {
+    public static void sumOfEleRows(int[][] matrix, int nRows, int nCols)
+    {
+        int rowSum;
+        for(int row=0; row<nRows; row++)
+        {
+            rowSum=0;
+            for(int col=0; col<nCols; col++)
+            {
+                rowSum+=matrix[row][col];
+            }
+            System.out.printf("Sum of Row %d is %d",row+1,rowSum);
+            
+        }
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int nRows = sc.nextInt();
+        int nCols = sc.nextInt();
+        int matrix[][] = new int[nRows][nCols];
+        for(int i = 0; i<nRows; i++){
+            for(int j = 0; j<nCols; j++){
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+        
+        sumOfEleRows(matrix, nRows, nCols);
+        }
+            
+       
+    }
+
+OutPut:
+3
+4
+10 20 30 40
+40 30 20 10
+90 70 80 99
+Sum of Row 1 is 100Sum of Row 2 is 100Sum of Row 3 is 339
